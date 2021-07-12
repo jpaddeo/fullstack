@@ -18,31 +18,31 @@ const fullstackMorganMid = (tokens, req, res) => {
 };
 app.use(morgan(fullstackMorganMid));
 
-
 let persons = [
-    {
-      id: 1,
-      name: "Arto Hellas",
-      number: "+5491123232323",
-    },
-    {
-      id: 2,
-      name: "Pepito Sibrian",
-      number: "+549119090900",
-    },
-    {
-      id: 3,
-      name: "Edgar Allan Poe",
-      number: "+549118989767",
-    },
-  ];
+  {
+    id: 1,
+    name: "Arto Hellas",
+    number: "+5491123232323",
+  },
+  {
+    id: 2,
+    name: "Pepito Sibrian",
+    number: "+549119090900",
+  },
+  {
+    id: 3,
+    name: "Edgar Allan Poe",
+    number: "+549118989767",
+  },
+];
 
-  
 const nextId = (collection) => {
   const maxId =
     collection.length > 0 ? Math.max(...collection.map((elem) => elem.id)) : 0;
   return maxId + 1;
 };
+
+app.use(express.static("frontend"));
 
 app.get("/api", (request, response) => {
   response.json({ status: true });
@@ -101,7 +101,7 @@ app.post("/api/persons", (request, response) => {
   persons = persons.concat(person);
   response.json(person);
 });
-const PORT = 3003;
+const PORT = process.env.PORT || 3003;
 app.listen(PORT, () => {
   console.log(`Server running in port ${PORT}`);
 });

@@ -1,0 +1,24 @@
+{
+    "persons": [
+        {
+            "id": 1,
+            "name": "Arto Hellas",
+            "number": "040-123456"
+        },
+        {
+            "id": 2,
+            "name": "Ada Lovelace",
+            "number": "040-7891011"
+        },
+        {
+            "id": 3,
+            "name": "Dan Abramov",
+            "number": "040-121314"
+        },
+        {
+            "id": 4,
+            "name": "Mary Poppendieck",
+            "number": "040-151617"
+        }
+    ]
+}
